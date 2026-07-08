@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book Online — Foster &amp; Sims Motor Engineers, Lincoln</title>
+<meta name="description" content="Book your MOT test or a service/repair appointment online at Foster and Sims, Lincoln. Choose your date and time in minutes.">
+<link rel="icon" href="https://fosterandsims.co.uk/wp-content/uploads/2022/02/cropped-fosterlogo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="brand">
+      <img src="https://fosterandsims.co.uk/wp-content/uploads/2022/02/cropped-fosterlogo.jpg" alt="Foster and Sims logo">
+      <span>Foster &amp; Sims<small>Motor Engineers · Lincoln</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">Services</a>
+        <div class="dropdown">
+          <a href="services.html#servicing">Servicing</a>
+          <a href="services.html#mot">MOT</a>
+          <a href="services.html#keys">Keys</a>
+          <a href="services.html#dpf">DPF</a>
+          <a href="services.html#aircon">Air Conditioning</a>
+          <a href="services.html#diagnostic">Diagnostic</a>
+          <a href="services.html#recovery">Recovery</a>
+          <a href="services.html#adas">ADAS</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="booking.html" class="active">Book Now</a></li>
+    </ul>
+    <div class="nav-cta">
+      <div class="nav-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        01522 528 537
+      </div>
+      <a href="checkout.html" class="cart-pill">Basket <span class="cart-count" data-cart-count>0</span></a>
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="booking-shell section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Book online</div>
+      <h2>What would you like to book?</h2>
+      <p class="lede">Pick MOT or a service/repair, choose a date and time that suits you, and we'll confirm the rest.</p>
+    </div>
+
+    <div class="booking-tabs">
+      <button data-tab="mot" class="active">🚗 Book MOT</button>
+      <button data-tab="service">🔧 Book Service / Repair</button>
+    </div>
+
+    <div id="bookingAlert" class="alert hidden" style="margin-bottom:24px;"></div>
+
+    <div class="booking-layout">
+      <div>
+
+        <!-- MOT PANEL -->
+        <div id="panel-mot" class="tab-panel">
+          <div class="panel">
+            <h3>1. Choose a date &amp; time</h3>
+            <div id="motDateGrid" class="date-grid"></div>
+            <div id="motSlotGrid" class="slot-grid"></div>
+          </div>
+          <div class="panel">
+            <h3>2. Vehicle &amp; contact details</h3>
+            <div class="field-row">
+              <div class="field">
+                <label for="motReg">Registration number</label>
+                <input id="motReg" placeholder="e.g. AB12 CDE">
+                <div class="error-msg">Please enter your registration number.</div>
+              </div>
+              <div class="field">
+                <label for="motMileage">Vehicle mileage</label>
+                <input id="motMileage" type="number" placeholder="e.g. 45000">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="motName">Full name</label>
+                <input id="motName" placeholder="First &amp; last name">
+                <div class="error-msg">Please enter your name.</div>
+              </div>
+              <div class="field">
+                <label for="motPhone">Mobile</label>
+                <input id="motPhone" type="tel" placeholder="07…">
+                <div class="error-msg">Please enter a valid phone number.</div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="motEmail">Email</label>
+              <input id="motEmail" type="email" placeholder="you@example.com">
+              <div class="error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="field">
+              <label for="motNotes">Anything we should know?</label>
+              <textarea id="motNotes" placeholder="e.g. known faults, preferred drop-off time…"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVICE PANEL -->
+        <div id="panel-service" class="tab-panel hidden">
+          <div class="panel">
+            <h3>1. Choose a service or repair</h3>
+            <div id="serviceOptions" class="service-pick"></div>
+          </div>
+          <div class="panel">
+            <h3>2. Choose a date &amp; time</h3>
+            <div id="serviceDateGrid" class="date-grid"></div>
+            <div id="serviceSlotGrid" class="slot-grid"></div>
+            <label class="checkbox-row" style="margin-top:20px;">
+              <input type="checkbox" class="courtesy-toggle">
+              Add a courtesy car for the day (+£15)
+            </label>
+          </div>
+          <div class="panel">
+            <h3>3. Vehicle &amp; contact details</h3>
+            <div class="field-row">
+              <div class="field">
+                <label for="serviceReg">Registration number</label>
+                <input id="serviceReg" placeholder="e.g. AB12 CDE">
+                <div class="error-msg">Please enter your registration number.</div>
+              </div>
+              <div class="field">
+                <label for="serviceMileage">Vehicle mileage</label>
+                <input id="serviceMileage" type="number" placeholder="e.g. 45000">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="serviceName">Full name</label>
+                <input id="serviceName" placeholder="First &amp; last name">
+                <div class="error-msg">Please enter your name.</div>
+              </div>
+              <div class="field">
+                <label for="servicePhone">Mobile</label>
+                <input id="servicePhone" type="tel" placeholder="07…">
+                <div class="error-msg">Please enter a valid phone number.</div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="serviceEmail">Email</label>
+              <input id="serviceEmail" type="email" placeholder="you@example.com">
+              <div class="error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="field">
+              <label for="serviceNotes">Describe the problem or request</label>
+              <textarea id="serviceNotes" placeholder="e.g. grinding noise when braking, warning light on dash…"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="summary-card" id="bookingSummary"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>&copy; <span data-year></span> Foster and Sims Motor Engineers. Unit 1, Greetwell Hollow, Crofton Drive, Lincoln LN3 4NR · 01522 528 537</span>
+      <span><a href="index.html" style="color:var(--slate-400);">Back to home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="booking.js"></script>
+</body>
+</html>
