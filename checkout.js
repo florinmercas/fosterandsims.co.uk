@@ -77,6 +77,18 @@
     if (payBtn) payBtn.disabled = cart.length === 0;
   }
 
+  function prefillContactFromCart() {
+    var cart = window.FSCart.getCart();
+    if (!cart.length) return;
+    var item = cart[0];
+    var nameEl = document.getElementById("checkoutName");
+    var phoneEl = document.getElementById("checkoutPhone");
+    var emailEl = document.getElementById("checkoutEmail");
+    if (nameEl && !nameEl.value && item.name) nameEl.value = item.name;
+    if (phoneEl && !phoneEl.value && item.phone) phoneEl.value = item.phone;
+    if (emailEl && !emailEl.value && item.email) emailEl.value = item.email;
+  }
+
   function updateBadgeVisibility() {
     var cart = window.FSCart.getCart();
     var empty = cart.length === 0;
@@ -238,6 +250,7 @@
     if (!document.getElementById("cartList")) return; // not checkout page
 
     renderCart();
+    prefillContactFromCart();
     bindPayToggle();
     bindCardFormatting();
     updateCardVisual();
