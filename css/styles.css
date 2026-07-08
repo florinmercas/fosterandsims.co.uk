@@ -136,20 +136,20 @@ p { color: var(--slate-500); margin: 0 0 16px; }
 .site-header.is-scrolled { box-shadow: var(--shadow-sm); }
 .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.05rem; color: var(--navy-900); }
-.brand img { height: 40px; width: 40px; border-radius: 10px; object-fit: cover; }
+.brand img { height: 52px; width: 52px; border-radius: 10px; object-fit: contain; }
 .brand small { display: block; font-weight: 500; font-size: 11px; color: var(--slate-500); letter-spacing: 0.03em; }
 
 .nav-links { display: flex; align-items: center; gap: 6px; }
 .nav-links > li > a, .nav-links > li > button.nav-link {
   display: flex; align-items: center; gap: 6px;
-  padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 14.5px;
+  padding: 10px 14px; border-radius: 8px; font-weight: 600; font-size: 16.5px;
   color: var(--navy-800); background: transparent; border: none;
 }
 .nav-links > li > a:hover, .nav-links > li > button.nav-link:hover { background: var(--slate-100); color: var(--red-600); }
 .nav-links > li > a.active { color: var(--red-600); }
 
 .nav-cta { display: flex; align-items: center; gap: 10px; }
-.nav-phone { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: var(--navy-900); }
+.nav-phone { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: var(--navy-900); margin-right: 26px; }
 .nav-phone svg { color: var(--red-600); }
 
 .has-dropdown { position: relative; }
